@@ -14,4 +14,3 @@ res = r.get('foo') # Retrieve pickled object using "GET" command in Redis
 
 unpacked_object = pickle.loads(res) # Unpickle the object
 print unpacked_object.x # Print test value
-
