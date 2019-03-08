@@ -56,11 +56,12 @@ def set_result_in_gds(task_id, execution_result):
 
 	return False
 
-def get_result_from_gds():
+def get_result_from_gds(task_id):
 
-	'''
-	TODO: Coordinate with Message Queue to ensure results being retrieved for a task ID in the Completed topic
-	'''
+	if not check_key_exists_in_gds(task_id):
+		raise Exception("Task ID does not exist on the GDS.")
+	else:
+		return retrieve_value_list_for_key_gds(task_id)
 
 
 def clear_gds_for_task_id(task_id):
