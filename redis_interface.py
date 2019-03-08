@@ -38,7 +38,7 @@ def insert_in_key_list_redis(task_id,values_to_be_added):
 			#print type(x)
 			redis_client.rpush(task_id,x)
 	except Exception as e:
-		print e
+		print(e)
 	return True
 
 
@@ -76,7 +76,7 @@ def main():
 	args = ["abc", "def", "ghi"]
 	#clear_gds_for_task_id("fooda")
 	#print add_args_to_gds("fooda", args)
-	print retrieve_value_list_for_key_gds("fooda")
+	print(retrieve_value_list_for_key_gds("fooda"))
 	#print get_args_from_gds("fooda")
 if __name__ == '__main__':
 	main()
